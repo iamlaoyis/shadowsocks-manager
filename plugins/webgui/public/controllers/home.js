@@ -43,16 +43,16 @@ app
     ($scope, $state) => {
       $scope.icons = [{
         icon: 'flash_on',
-        title: '快速搭建',
-        content: '仅依赖Node.js，无需安装数据库（可选MySQL）',
+        title: '网络极速',
+        content: '多个高速节点针对不同线路优化加速',
       }, {
         icon: 'build',
         title: '易于配置',
-        content: '带有插件系统，仅需修改配置文件即可运行',
+        content: '拒绝手动二维码扫一扫即可完成配置',
       }, {
         icon: 'vpn_key',
         title: '官方标准',
-        content: '支持libev和python版本的标准manager API',
+        content: '256位高强度加密保护您的隐私安全',
       }];
       $scope.login = () => { $state.go('home.login'); };
       $scope.signup = () => { $state.go('home.signup'); };
@@ -103,7 +103,7 @@ app
         alertDialog.loading();
         homeApi.sendCode($scope.user.email)
         .then(success => {
-          alertDialog.show('验证码已发至邮箱', '确定');
+          alertDialog.show('验证码已发至邮箱,请注意查收', '确定');
           $scope.sendCodeTime = 120;
           const interval = $interval(() => {
             if ($scope.sendCodeTime > 0) {
